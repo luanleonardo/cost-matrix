@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cost-matrix"
-version = "0.1.0"
+version = "0.1.1"
 description = "Designed to simplify the creation of cost matrices for optimization problems."
 authors = ["Luan <llvdmoraes@gmail.com>"]
 readme = "README.md"
