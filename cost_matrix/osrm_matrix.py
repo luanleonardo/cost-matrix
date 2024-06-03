@@ -11,7 +11,28 @@ def osrm(
     batch_size: int = 150,
     cost_type: str = "distances",
 ) -> np.ndarray:
-    """Compute the OSRM cost matrix between sources and destinations"""
+    """
+    Compute the OSRM cost matrix between sources and destinations
+
+    Parameters
+    ----------
+    sources : np.ndarray
+        Array of shape (n, d) containing the source points.
+    destinations : np.ndarray
+        Array of shape (m, d) containing the destination points.
+    server_address : str
+        Address of the OSRM server. Default is "http://router.project-osrm.org".
+    batch_size : int
+        Number of points to send in each request. Default is 150.
+    cost_type : str
+        Type of cost to be computed. Default is "distances". Options are
+        "distances" and "durations".
+
+    Returns
+    -------
+    np.ndarray
+        OSRM cost matrix of shape (n, m).
+    """
 
     num_sources = sources.shape[0]
     num_destinations = destinations.shape[0]

@@ -4,7 +4,21 @@ EARTH_RADIUS_METERS = 6371000
 
 
 def spherical(sources: np.ndarray, destinations: np.ndarray) -> np.ndarray:
-    """Distance matrix using the Spherical distance"""
+    """
+    Compute the distance matrix using the Spherical distance]
+
+    Parameters
+    ----------
+    sources : np.ndarray
+        Array of shape (n, d) containing the source points.
+    destinations : np.ndarray
+        Array of shape (m, d) containing the destination points.
+
+    Returns
+    -------
+    np.ndarray
+        Spherical distance matrix of shape (n, m).
+    """
 
     sources_rad = np.radians(sources)
     destinations_rad = np.radians(destinations)
