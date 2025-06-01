@@ -87,10 +87,7 @@ def _fetch_matrix_batch(
 ):
     """Request the OSRM cost matrix for a given batch"""
     url = _format_url(
-        sources_batch,
-        destinations_batch,
-        server_address,
-        cost_type
+        sources_batch, destinations_batch, server_address, cost_type
     )
     response = requests.get(url)
     response.raise_for_status()
@@ -132,9 +129,7 @@ def _format_url(
     "distances"). Thus, we ignore the last letter of the input type
     """
     url_cost_type = cost_type[:-1]
-    sources_coord = ';'.join(
-        f'{lng},{lat}' for (lat, lng) in sources_batch
-    )
+    sources_coord = ";".join(f"{lng},{lat}" for (lat, lng) in sources_batch)
 
     # If sources == destinations, return a simpler URL early. Notice it needs
     # at least two points, otherwise OSRM complains
@@ -147,10 +142,10 @@ def _format_url(
             f"?annotations={url_cost_type}"
         )
 
-    destinations_coord = ';'.join(
-        f'{lng},{lat}' for (lat, lng) in destinations_batch
+    destinations_coord = ";".join(
+        f"{lng},{lat}" for (lat, lng) in destinations_batch
     )
-    locations_coord = sources_coord + ';' + destinations_coord
+    locations_coord = sources_coord + ";" + destinations_coord
 
     # Get indices of sources and destinations in the form
     # sources = 0,1,...,N' and destinations = N'+1,N'+2...N'+M'
