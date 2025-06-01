@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "cost-matrix"
-version = "0.1.1"
+version = "0.2.0"
 description = "Designed to simplify the creation of cost matrices for optimization problems."
 authors = ["Luan <llvdmoraes@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.9,<3.13"
+python = ">=3.10,<3.13"
 numpy = "^1.26.4"
 requests = "^2.32.3"
 
